@@ -1,0 +1,37 @@
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+
+{% block title %}
+
+    Accueil - {{ parent() }}
+
+{% endblock %}
+
+
+{% block ocplatform_body %}
+
+    <h2 class="titre-liste">Liste des annonces</h2>
+
+    {# LISTE DES ANNONCES#}
+    <div class="block-liste">
+        <ul>
+            {% for advert in listAdverts %}
+
+                <li>
+                    {# Lien vers la vue de l'article#}
+                    <a href="{{ path('oc_platform_view', {'id': advert.id}) }}">
+                        {{ advert.title }}
+                    </a>
+                    <p> par {{ advert.author }},
+                        le {{ advert.date|date('d/m/Y') }}
+                    </p>
+                </li>
+
+            {% else %}
+
+                <li>Pas (encore !) d'annonces</li>
+
+            {% endfor %}
+        </ul>
+    </div>{# /END LISTE DES ANNONCES#}
+{% endblock %}

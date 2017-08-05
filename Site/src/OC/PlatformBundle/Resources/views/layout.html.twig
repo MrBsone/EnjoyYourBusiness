@@ -1,0 +1,26 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+
+    Annonces - {{ parent() }}
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bundles/ocplatform/css/main.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/ocplatform/css/view.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('bundles/ocplatform/css/index.css') }}" type="text/css">
+{% endblock %}
+
+
+{% block body %}
+
+    <h1 class="title-main">Articles</h1>
+
+
+    {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+    {% block ocplatform_body %}
+    {% endblock %}
+
+{% endblock %}

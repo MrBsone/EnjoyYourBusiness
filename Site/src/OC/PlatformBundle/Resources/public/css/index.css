@@ -1,0 +1,9 @@
+.block-liste{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre-liste {
+    margin-bottom: 4%;
+}

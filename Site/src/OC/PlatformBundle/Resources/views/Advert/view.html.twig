@@ -1,0 +1,26 @@
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+
+    Lecture d'une annonce - {{ parent() }}
+
+{% endblock %}
+
+
+{% block ocplatform_body %}
+    <div class="block-view">
+        <h2 class="titre">{{ listAdverts.title }}</h2>
+
+        <p>Par {{ listAdverts.author }}, le {{ listAdverts.date|date('d/m/Y') }}</p>
+
+        <div class="well">
+            {{ listAdverts.content }}
+        </div>
+
+        <p>
+            <a href="{{ path('oc_platform_home') }}" class="btn btn-default">
+                <i class="glyphicon glyphicon-chevron-left">Retour à la liste</i>
+            </a>
+        </p>
+    </div>
+{% endblock %}
